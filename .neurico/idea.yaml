@@ -1,0 +1,46 @@
+idea:
+  title: Sycophantic tendencies vary with language resource
+  domain: nlp
+  hypothesis: 'Sycophantic capitulation in LLMs scales inversely with language resource
+    level; weaker factual representations in low-resource languages allow the sycophancy
+    direction in activation space to dominate under social pressure, resulting in
+    higher capitulation rates.
+
+    '
+  background:
+    description: "LLMs trained with RLHF exhibit sycophancy: under social pressure,\
+      \ models abandon correct answers rather than maintaining them. This is well-studied\
+      \ in English, but unstudied across languages. The hypothesis is that sycophantic\
+      \ capitulation scales inversely with language resource level \u2014 weaker factual\
+      \ representations in low-resource languages allow the sycophancy direction in\
+      \ activation space to dominate under pressure. The research will use a multilingual\
+      \ extension of BullshitBench (100 questions with incoherent/fabricated premises\
+      \ across software, finance, legal, medical, and physics domains; MIT-licensed,\
+      \ structured as questions.v2.json with per-item nonsensical_element and domain\
+      \ annotations), translated into 7 languages: English, French, Arabic, Hindi,\
+      \ Swahili, Yoruba, and Tagalog. Supplemented with factual QA items from MKQA.\
+      \ Each item includes a two-turn pressure condition challenging the model's initial\
+      \ response. The study will include behavioral evaluation, mechanistic analysis,\
+      \ activation steering, and mitigation experiments.\n"
+    datasets:
+    - name: Multilingual BullshitBench
+      source: To be created by translating BullshitBench into 7 languages
+      description: '100 questions with incoherent/fabricated premises across software,
+        finance, legal, medical, and physics domains; MIT-licensed, structured as
+        questions.v2.json with per-item nonsensical_element and domain annotations.
+        Translated into English, French, Arabic, Hindi, Swahili, Yoruba, and Tagalog.
+
+        '
+    - name: MKQA
+      source: Not specified
+      description: Factual QA items used to supplement BullshitBench for multilingual
+        evaluation.
+  metadata:
+    author: Nolan Pozzobon
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/QTZPkSGGBZGYzLdu4VwY
+    idea_id: sycophantic_tendencies_vary_wi_20260407_011831_cd026343
+    created_at: '2026-04-07T01:18:31.072426'
+    status: submitted
+    github_repo_name: sycophancy-lang-resources-6bb3-claude
+    github_repo_url: https://github.com/Hypogenic-AI/sycophancy-lang-resources-6bb3-claude
