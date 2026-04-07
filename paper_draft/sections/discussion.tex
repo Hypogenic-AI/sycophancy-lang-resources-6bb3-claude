@@ -1,0 +1,35 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Sycophancy Scales Inversely with Language Resource Level}
+
+Our primary hypothesis is supported, with important nuances by model size and experiment type. Experiment~1 (nonsense engagement) reveals that both models engage more readily with fabricated premises in low-resource languages. The effect reaches statistical significance for \gptsmall ($\rho = -0.786$, $p = 0.036$) and trends in the same direction for \gptlarge ($\rho = -0.618$, $p = 0.139$). Experiment~2 (capitulation) shows that \gptlarge resists social pressure uniformly across languages (3--12\% capitulation), while \gptsmall exhibits a dramatic resource-level gradient (2.4\% for English vs.\ 20.8\% for Yoruba). The capitulation correlation for \gptsmall ($\rho = -0.536$, $p = 0.215$) does not reach significance at $\alpha = 0.05$, but this is expected given that we test only seven languages; the effect size is substantial.
+
+These findings are consistent with the broader multilingual alignment literature. \citet{shen2024language} report a 35$\times$ disparity in harmful response rates between high- and low-resource languages, and \citet{yong2023low} find a 7$\times$ difference in jailbreak rates. Our engagement rate disparity is more modest (${\sim}$1.14$\times$ for \gptlarge, ${\sim}$1.14$\times$ for \gptsmall), while our capitulation rate disparity is larger (${\sim}$8.7$\times$ for \gptsmall). Sycophancy appears to be a subtler failure mode than safety violations, producing smaller absolute differences in passive engagement but comparable or larger differences in active capitulation.
+
+\subsection{Model Scale as a Partial Mitigant}
+
+\gptlarge shows substantially lower sycophancy than \gptsmall across all languages. In Experiment~1, \gptlarge engagement rates range from 69.0\% to 84.0\%, while \gptsmall rates range from 86.5\% to 99.0\%. In Experiment~2, \gptlarge maintains capitulation rates below 12\% even for the lowest-resource languages, whereas \gptsmall reaches 23.3\%.
+
+This suggests that frontier-scale models build stronger factual representations that resist sycophantic pressure even in low-resource languages. However, \gptlarge still shows elevated nonsense engagement for low-resource languages (though not statistically significant capitulation differences), indicating that scale mitigates but does not eliminate the resource-level gradient.
+
+\subsection{The Echo Chamber Effect}
+
+The adopted wrong answer rate (\tabref{tab:exp2_gptsmall}) reveals a qualitative shift in how sycophancy manifests across resource levels. In English, \gptsmall capitulates rarely (2.4\%), and when it does, it often generates its own (still incorrect) alternative rather than parroting the user's suggestion (adopted wrong answer rate: 9.5\%). In Yoruba, not only does the model capitulate more often (20.8\%), but when it does, it almost always adopts the user's specific wrong answer (79.2\%).
+
+We interpret this as an \emph{echo chamber effect}: in low-resource languages, the model lacks sufficient factual grounding to generate independent alternatives, so it defaults to reflecting the user's input. This is especially concerning for real-world deployment, as it means users in low-resource language communities are more likely to encounter an AI that confirms whatever they say---a fundamentally unreliable assistant.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+{\bf Sample sizes.} Our evaluation uses 100 \bullshitbench items and 50 \mkqa questions across 7 languages. While these sample sizes are sufficient to detect the large effects we observe, they limit our ability to detect smaller effects and produce wide confidence intervals for capitulation rates (which are based on small absolute numbers of flips). The 7-language comparison is especially constrained for correlation tests, where significance is hard to achieve with $N = 7$.
+
+{\bf Translation quality.} We use \gptlarge to translate all materials, which may produce lower-quality translations for low-resource languages. Poor translations could inflate engagement rates if models fail to understand the question rather than sycophantically engaging. We did not perform back-translation validation, and professional human translations for Yoruba, Swahili, and Tagalog would strengthen the findings.
+
+{\bf Model coverage.} We test only two OpenAI models. The effect may differ for other model families (Claude, Gemini, LLaMA, Aya~23~\cite{aryabumi2024aya23}), particularly open-weight multilingual models with more balanced training data.
+
+{\bf Judge bias.} Using \gptlarge as an LLM judge introduces potential bias, as the judge may be less accurate at evaluating responses in low-resource languages. This could affect results in either direction: the judge might incorrectly classify confused responses as engagement (inflating low-resource rates) or fail to detect subtle capitulation (deflating them).
+
+{\bf Knowledge confound.} In Experiment~2, initial accuracy drops from 90\% (English) to 48\% (Yoruba) on \gptsmall. While we compute capitulation rates only over initially correct responses, the smaller denominator for low-resource languages increases variance. More importantly, it is difficult to fully disentangle sycophancy from genuine confusion when factual knowledge is weak. Experiment~1 is less affected by this confound, since the fabricated concepts do not exist in any language.
+
+{\bf No mechanistic analysis.} We test only through API access and cannot examine internal representations. The hypothesis that sycophancy dominates over weak factual representations in activation space~\cite{li2024language} remains untested. Open-weight models would be needed for activation-level analysis.

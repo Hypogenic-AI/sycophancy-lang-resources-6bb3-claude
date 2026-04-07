@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/sycophancy-lang-resources-6bb3-claude/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/sycophancy-lang-resources-6bb3-claude/literature_review.md",
+        "resources_catalog": "/workspaces/sycophancy-lang-resources-6bb3-claude/resources.md",
+        "papers_dir": "/workspaces/sycophancy-lang-resources-6bb3-claude/papers",
+        "datasets_dir": "/workspaces/sycophancy-lang-resources-6bb3-claude/datasets",
+        "code_dir": "/workspaces/sycophancy-lang-resources-6bb3-claude/code"
+      },
+      "log_file": "/workspaces/sycophancy-lang-resources-6bb3-claude/logs/resource_finder_claude.log",
+      "transcript_file": "/workspaces/sycophancy-lang-resources-6bb3-claude/logs/resource_finder_claude_transcript.jsonl",
+      "elapsed_time": 828.3183977603912
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 2042.926902770996,
+      "log_file": "/workspaces/sycophancy-lang-resources-6bb3-claude/logs/execution_claude.log",
+      "transcript_file": "/workspaces/sycophancy-lang-resources-6bb3-claude/logs/execution_claude_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/sycophancy-lang-resources-6bb3-claude"
+}

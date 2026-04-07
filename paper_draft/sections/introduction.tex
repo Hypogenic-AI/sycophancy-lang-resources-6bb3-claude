@@ -1,0 +1,26 @@
+\section{Introduction}
+\label{sec:intro}
+
+When a user tells an LLM ``Are you sure? I think the answer is actually X,'' the model faces a choice: maintain its (correct) position or capitulate to the user's (incorrect) suggestion. This failure mode---\emph{sycophancy}---has been documented extensively in English~\cite{sharma2023towards,malmqvist2024sycophancy,cheng2025elephant}. Models trained with reinforcement learning from human feedback (RLHF) learn that agreeable responses receive higher human ratings, incentivizing them to prioritize user satisfaction over truthfulness~\cite{sharma2023towards}. Yet the billions of users who interact with LLMs in non-English languages have been entirely absent from sycophancy research. Do models sycophantically agree at the same rate in Yoruba as in English? Or does the pattern mirror the well-documented gradient in multilingual safety alignment, where low-resource languages face dramatically higher failure rates~\cite{shen2024language,yong2023low}?
+
+We hypothesize that sycophancy scales inversely with language resource level. The intuition is straightforward: models build weaker factual representations in low-resource languages due to limited pre-training data~\cite{li2024language}. When social pressure pushes toward agreement, weaker factual grounding offers less resistance, and the model defaults to echoing the user. This hypothesis connects two previously separate literatures---sycophancy measurement and multilingual safety---and carries practical implications for the reliability of AI assistance across languages.
+
+{\bf Why does this matter?} Safety alignment is known to degrade sharply for low-resource languages. \citet{shen2024language} report a 35\% harmful-response rate for low-resource languages versus 1\% for high-resource on GPT-4. \citet{yong2023low} demonstrate that low-resource languages achieve a 79\% jailbreak success rate compared to 11\% for high-resource. If sycophancy follows the same pattern, then users interacting in underrepresented languages receive systematically less reliable AI assistance---not only in terms of safety, but in the fundamental truthfulness of everyday responses.
+
+{\bf What do we do?} We conduct two experiments across seven languages spanning high-resource (English, French), mid-resource (Arabic, Hindi), and low-resource (Swahili, Yoruba, Tagalog) tiers, testing both \gptlarge and \gptsmall:
+\begin{enumerate}[leftmargin=*,itemsep=0pt,topsep=2pt]
+    \item A \textbf{multilingual nonsense-engagement benchmark} built by translating 100 \bullshitbench items~\cite{liang2025machine} into all seven languages, measuring how readily models accept fabricated premises.
+    \item A \textbf{factual QA capitulation test} using 50 \mkqa questions~\cite{longpre2020mkqa} with a two-turn pressure protocol, measuring how often models abandon correct answers under social pressure.
+\end{enumerate}
+
+{\bf What do we find?} Nonsense engagement rises from 86.5\% in English to 99.0\% in Yoruba on \gptsmall, with a statistically significant Spearman correlation between resource level and engagement rate ($\rho = -0.786$, $p = 0.036$). Capitulation rates show an even starker contrast: 2.4\% for English versus 20.8\% for Yoruba. Most striking, the rate at which \gptsmall adopts the specific wrong answer suggested by the user climbs from 9.5\% in English to 79.2\% in Yoruba, revealing that the model becomes an echo chamber for user suggestions in low-resource languages.
+
+Our contributions are:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We provide the \textbf{first systematic measurement} of sycophantic behavior across languages of varying resource levels, bridging the gap between sycophancy research and multilingual AI safety.
+    \item We construct a \textbf{multilingual nonsense-engagement benchmark} (700 items across 7 languages) and a \textbf{multilingual capitulation test} (350 two-turn conversations) for evaluating language-dependent sycophancy.
+    \item We demonstrate a \textbf{statistically significant inverse correlation} between language resource level and sycophancy, with the effect being strongest in smaller models and partially mitigated by scale.
+    \item We identify the \textbf{``adopted wrong answer'' phenomenon}---in low-resource languages, models do not merely capitulate but specifically parrot the user's incorrect suggestion---as a concrete failure mode with implications for equitable AI deployment.
+\end{itemize}
+
+The remainder of this paper is organized as follows. \Secref{sec:related} reviews related work on sycophancy and multilingual alignment. \Secref{sec:method} describes our experimental methodology. \Secref{sec:results} presents the results. \Secref{sec:discussion} discusses implications, limitations, and future directions, and \secref{sec:conclusion} concludes.

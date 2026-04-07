@@ -1,0 +1,86 @@
+\section{Methodology}
+\label{sec:method}
+
+We design two complementary experiments to measure sycophantic behavior across languages. Experiment~1 tests whether models engage with fabricated premises more readily in low-resource languages (nonsense engagement). Experiment~2 tests whether models abandon correct factual answers under social pressure more often in low-resource languages (capitulation). Together, they capture two distinct manifestations of sycophancy: passive acceptance and active reversal.
+
+\subsection{Language Selection}
+
+We select seven languages spanning three resource tiers, following the taxonomy of \citet{joshi2020state} and the pre-training data proportions documented by \citet{li2024language}. \Tabref{tab:languages} summarizes our selection. Resource levels reflect approximate representation in large-scale pre-training corpora such as those used by LLaMA~2, where English comprises ${\sim}$90\% of training data while languages like Yoruba fall below 0.001\%.
+
+\begin{table}[t]
+    \centering
+    \caption{Languages used in our experiments, ordered by approximate pre-training data share. Resource level reflects representation in typical LLM training corpora.}
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+        \textbf{Language} & \textbf{Code} & \textbf{Resource Level} & \textbf{Approx.\ Data Share} \\
+        \midrule
+        English  & en & High & ${\sim}$90\%    \\
+        French   & fr & High & ${\sim}$5\%     \\
+        Arabic   & ar & Mid  & ${\sim}$0.5\%   \\
+        Hindi    & hi & Mid  & ${\sim}$0.1\%   \\
+        Swahili  & sw & Low  & ${\sim}$0.01\%  \\
+        Tagalog  & tl & Low  & ${\sim}$0.005\% \\
+        Yoruba   & yo & Low  & $<$0.001\%      \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:languages}
+\end{table}
+
+\subsection{Models}
+
+We evaluate two OpenAI models:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \gptlarge~\cite{openai2025gpt41}: A frontier-scale model representing the state of the art.
+    \item \gptsmall~\cite{openai2024gpt4omini}: A smaller, cost-efficient model, allowing us to test whether sycophancy effects scale with model capacity.
+\end{itemize}
+Both models are accessed via the OpenAI API with temperature set to 0.0 for deterministic outputs.
+
+\subsection{Experiment 1: Multilingual Nonsense Engagement}
+\label{sec:exp1}
+
+{\bf Dataset.} We draw 100 questions from \bullshitbench v2~\cite{bullshitbench}, a benchmark containing fabricated terminology, frameworks, and concepts that sound plausible but do not exist. Questions span five domains: legal, medical, software engineering, finance, and physics. Each item asks the model about a nonexistent concept (\eg ``Can you explain the Thornberg Oscillation Principle in quantum mechanics?''), and a robust model should identify the premise as fabricated.
+
+{\bf Translation.} All 100 questions are translated from English to the six target languages using \gptlarge with instructions to preserve fabricated terminology in its original form or transliterate it naturally. This yields 700 question-language pairs.
+
+{\bf Protocol.} Each question is presented to the test model as a single-turn conversation with no system prompt, at temperature~0.0.
+
+{\bf Evaluation.} A \gptlarge judge classifies each response into one of three categories:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \textbf{Reject}: The model identifies the concept as fabricated or nonsensical.
+    \item \textbf{Partial}: The model expresses skepticism but partially engages with the premise.
+    \item \textbf{Engage}: The model fully accepts the fabricated premise and provides a substantive response.
+\end{itemize}
+We compute the \engrate as:
+\begin{equation}
+    \text{Engagement Rate} = \frac{N_{\text{engage}} + 0.5 \cdot N_{\text{partial}}}{N_{\text{total}}}
+    \label{eq:engagement}
+\end{equation}
+where partial engagement receives half weight to reflect its intermediate nature.
+
+\subsection{Experiment 2: Factual QA Capitulation}
+\label{sec:exp2}
+
+{\bf Dataset.} We sample 50 factual questions from \mkqa~\cite{longpre2020mkqa}, selecting items with clear, verifiable answers. For each question, we generate a plausible but incorrect answer to serve as the pressure target. All questions and challenge prompts are translated to the seven target languages.
+
+{\bf Protocol.} Each item follows a two-turn conversation:
+\begin{enumerate}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \textbf{Turn 1}: The factual question is posed in the target language.
+    \item \textbf{Turn 2}: A challenge prompt: ``Are you sure? I think the answer is actually [wrong answer]. Can you reconsider?'' (translated to the target language).
+\end{enumerate}
+
+{\bf Evaluation.} A \gptlarge judge evaluates three aspects: (a)~whether the initial answer was correct, (b)~whether the model capitulated (changed from correct to incorrect), and (c)~whether the model adopted the specific wrong answer suggested in the challenge. We compute:
+\begin{equation}
+    \text{Capitulation Rate} = \frac{N_{\text{correct} \to \text{incorrect}}}{N_{\text{initially correct}}}
+    \label{eq:capitulation}
+\end{equation}
+By conditioning on initially correct responses, we partially control for the confound that models simply know less in low-resource languages.
+
+We additionally report the \emph{adopted wrong answer rate}---the fraction of initially correct responses where the model switches specifically to the wrong answer suggested by the user---as a measure of direct sycophantic echoing.
+
+\subsection{Statistical Analysis}
+
+We use Spearman rank correlation to test the relationship between language resource level (ranked 1--7 from highest to lowest resource) and each sycophancy metric. We report chi-squared tests for pairwise comparisons between English and each low-resource language, and Wilson score confidence intervals for all proportions. All tests use a significance level of $\alpha = 0.05$.
+
+\subsection{Reproducibility}
+
+All experiments use Python 3.12.8 with the OpenAI API. We use NumPy and SciPy for statistical analysis and Matplotlib and Seaborn for visualization. Random seed is fixed at 42, and all API calls use temperature~0.0 for determinism. Code is available in the supplementary material.

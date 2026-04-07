@@ -1,0 +1,696 @@
+[
+  {
+    "query": "how long did it take the twin towers to be built",
+    "answers": {
+      "en": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 years",
+          "aliases": [
+            "11 years"
+          ]
+        }
+      ],
+      "no": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 År",
+          "aliases": [
+            "11 År"
+          ]
+        }
+      ],
+      "ru": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 лет",
+          "aliases": [
+            "11 лет"
+          ]
+        }
+      ],
+      "hu": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 esztendő",
+          "aliases": [
+            "11 esztendő"
+          ]
+        }
+      ],
+      "tr": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 yıl",
+          "aliases": [
+            "11 yıl"
+          ]
+        }
+      ],
+      "ms": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 tahun",
+          "aliases": [
+            "11 tahun"
+          ]
+        }
+      ],
+      "ja": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 年",
+          "aliases": [
+            "11 年"
+          ]
+        }
+      ],
+      "sv": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 årtal",
+          "aliases": [
+            "11 årtal"
+          ]
+        }
+      ],
+      "it": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 anno",
+          "aliases": [
+            "11 anno"
+          ]
+        }
+      ],
+      "pl": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 rok",
+          "aliases": [
+            "11 rok"
+          ]
+        }
+      ],
+      "ar": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 سنة",
+          "aliases": [
+            "11 سنة"
+          ]
+        }
+      ],
+      "th": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 ปี",
+          "aliases": [
+            "11 ปี"
+          ]
+        }
+      ],
+      "km": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 years",
+          "aliases": [
+            "11 years"
+          ]
+        }
+      ],
+      "nl": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 jaar",
+          "aliases": [
+            "11 jaar"
+          ]
+        }
+      ],
+      "ko": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 연도",
+          "aliases": [
+            "11 연도"
+          ]
+        }
+      ],
+      "es": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 año terrestre",
+          "aliases": [
+            "11 año terrestre"
+          ]
+        }
+      ],
+      "de": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 Jahr",
+          "aliases": [
+            "11 Jahr"
+          ]
+        }
+      ],
+      "pt": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 ano",
+          "aliases": [
+            "11 ano"
+          ]
+        }
+      ],
+      "vi": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 năm",
+          "aliases": [
+            "11 năm"
+          ]
+        }
+      ],
+      "fr": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 années",
+          "aliases": [
+            "11 années"
+          ]
+        }
+      ],
+      "he": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 שנה",
+          "aliases": [
+            "11 שנה"
+          ]
+        }
+      ],
+      "da": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 år",
+          "aliases": [
+            "11 år"
+          ]
+        }
+      ],
+      "fi": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 vuosi",
+          "aliases": [
+            "11 vuosi"
+          ]
+        }
+      ],
+      "zh_cn": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 年份",
+          "aliases": [
+            "11 年份"
+          ]
+        }
+      ],
+      "zh_tw": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 年份",
+          "aliases": [
+            "11 年份"
+          ]
+        }
+      ],
+      "zh_hk": [
+        {
+          "type": "number_with_unit",
+          "text": "11.0 年份",
+          "aliases": [
+            "11 年份"
+          ]
+        }
+      ]
+    },
+    "queries": {
+      "tr": "ikiz kulelerin inşa edilmesi ne kadar sürdü",
+      "hu": "mennyi ideig épültek az ikertornyok?",
+      "zh_hk": "建造twin towers用了多長時間",
+      "nl": "hoelang duurde het om de twin towers te bouwen",
+      "ms": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+      "zh_cn": "世贸双塔建造用时多长",
+      "ja": "ツインタワーが建てられるまでどの位の時間がかかりましたか",
+      "de": "Wie lange dauerte es, um die Twin Towers zu bauen?",
+      "ru": "как долго строились башни-близнецы",
+      "pl": "ile czasu zajęło zbudowanie bliźniaczych wież",
+      "fi": "kuinka pitkään kaksoistorneja rakennettiin",
+      "pt": "quanto tempo levou para as torres gêmeas serem construídas",
+      "km": "តើវាត្រូវចំណាយពេលប៉ុន្មានដើម្បីសាងសង់ប៉មភ្លោះ",
+      "it": "Quanto ci è voluto per costruire le torri gemelle",
+      "fr": "combien de temps a-t-il fallu pour construire les tours jumelles",
+      "he": "כמה זמן לקח לבנות את מגדלי התאומים",
+      "vi": "Tòa tháp đôi được xây dựng trong bao lâu?",
+      "zh_tw": "世界貿易中心花了多久蓋好",
+      "no": "hvor lang tid tok det å bygge tvillingtårnene",
+      "da": "hvor lang tid tog det at bygge tvillinge tårnene",
+      "th": "ตึกคู่ใช้เวลาสร้างเท่าไหร่",
+      "sv": "hur lång tid tog det att bygga twin towers",
+      "es": "cuanto tardaron en construirse las torres gemelas",
+      "ar": ": كم من الوقت استغرق بناء البرجين التوأمين",
+      "en": "how long did it take the twin towers to be built",
+      "ko": "쌍둥이 빌딩이 지어지기 까지 얼마나 걸려"
+    },
+    "example_id": 3051930912491995402
+  },
+  {
+    "query": "where did the phrase great scott come from",
+    "answers": {
+      "en": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "no": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "ru": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "hu": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "tr": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "ms": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "ja": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "sv": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "it": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "pl": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "ar": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "th": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "km": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "nl": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "ko": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "es": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "de": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "pt": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "vi": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "fr": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "he": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "da": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "fi": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "zh_cn": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "zh_tw": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ],
+      "zh_hk": [
+        {
+          "type": "long_answer",
+          "text": null
+        }
+      ]
+    },
+    "queries": {
+      "tr": "büyük scott deyimi nerede ortaya çıkmıştır",
+      "hu": "Honnan ered a great scott kifejezés?",
+      "zh_hk": "great scott 這個詞是從哪裡來的",
+      "nl": "waar komt de term great scott vandaan",
+      "ms": "dari mana asal usul frasa great scott",
+      "zh_cn": "great scott c这个词来自哪里",
+      "ja": "great scottという句の由来は何ですか",
+      "de": "Woher kommt der Satz great scott",
+      "ru": "откуда взялась фраза great scott",
+      "pl": "skąd pochodzi zwrot great scott",
+      "fi": "Mistä tuli sanonta great scott",
+      "pt": "de onde veio a frase great scott",
+      "km": "កន្លែងណា​ដែល ឃ្លាដ៏អស្ចារ្យលោកស្កត មកពី",
+      "it": "Da dove deriva la frase \"great scott\"",
+      "fr": "d'où vient la phrase great scott",
+      "he": "מאיפה הביטוי great scott",
+      "vi": "câu nói great scott đến từ đâu",
+      "zh_tw": "great scott的用法是從哪裡來的",
+      "no": "hvor kommer uttrykket great scott fra",
+      "da": "hvor stammer udråbet great scott fra",
+      "th": "คำกล่าว great scott มีต้นกำเนิดมาจากไหน",
+      "sv": "var kommer frasen great scott  från",
+      "es": "de donde viene la frase great scott",
+      "ar": "من أين جاءت العبارة \"great scott\"",
+      "en": "where did the phrase great scott come from",
+      "ko": "어디에서 용어 great scott가 나왔나요"
+    },
+    "example_id": 6277735658261425592
+  },
+  {
+    "query": "who sings love you like there's no tomorrow",
+    "answers": {
+      "en": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": [
+            "Christopher Alan \"Chris\" Young"
+          ]
+        }
+      ],
+      "no": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ],
+      "ru": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Янг, Крис",
+          "aliases": [
+            "Крис Янг"
+          ]
+        }
+      ],
+      "hu": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ],
+      "tr": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ],
+      "ms": [
+        {
+          "type": "entity",
+          "text": "Chris Young ",
+          "entity": "Q952176"
+        }
+      ],
+      "ja": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "クリス・ヤング",
+          "aliases": []
+        }
+      ],
+      "sv": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "it": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "pl": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ],
+      "ar": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "كريس يونغ",
+          "aliases": []
+        }
+      ],
+      "th": [
+        {
+          "type": "entity",
+          "text": "คริส ยัง",
+          "entity": "Q952176"
+        }
+      ],
+      "km": [
+        {
+          "type": "entity",
+          "text": "ហ្រិស្ ឱឧន្គ្",
+          "entity": "Q952176"
+        }
+      ],
+      "nl": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "ko": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "크리스 영",
+          "aliases": []
+        }
+      ],
+      "es": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "de": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": [
+            "Christopher Alan Young"
+          ]
+        }
+      ],
+      "pt": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ],
+      "vi": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ],
+      "fr": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "he": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "קריס יאנג",
+          "aliases": []
+        }
+      ],
+      "da": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "fi": [
+        {
+          "type": "entity",
+          "entity": "Q952176",
+          "text": "Chris Young",
+          "aliases": []
+        }
+      ],
+      "zh_cn": [
+        {
+          "type": "entity",
+          "text": "克里斯·扬",
+          "entity": "Q952176"
+        }
+      ],
+      "zh_tw": [
+        {
+          "type": "entity",
+          "text": "克里斯·揚",
+          "entity": "Q952176"
+        }
+      ],
+      "zh_hk": [
+        {
+          "type": "entity",
+          "text": "Chris Young",
+          "entity": "Q952176"
+        }
+      ]
+    },
+    "queries": {
+      "tr": "love you like there's no tomorrow'u kim söylüyor",
+      "hu": "ki az előadója a love you like there's no tomorrow című számnak?",
+      "zh_hk": "love you like there's no tomorrow這首歌是誰唱的",
+      "nl": "wie zingt love you like there's no tomorrow",
+      "ms": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+      "zh_cn": "love you like there's no tomorrow是谁演唱的",
+      "ja": "love you like there's no tomorrowを歌っているのは誰か",
+      "de": "Wer singt love you like there's no tomorrow",
+      "ru": "кто поёт love you like there's no tomorrow",
+      "pl": "kto śpiewa love you like there's no tomorrow",
+      "fi": "kuka laulaa kappaleen love you like there's no tomorrow",
+      "pt": "quem canta te amo como se não houvesse amanhã",
+      "km": "អ្នកណាច្រៀងស្រលាញ់អ្នកដូចគ្មានថ្ងៃស្អែក",
+      "it": "chi canta love you like there's no tomorrow",
+      "fr": "Qui interprète la chanson Love you like there's no tomorrow",
+      "he": "מי שר את love you like there's no tomorrow",
+      "vi": "ai hát love you like there's no tomorrow",
+      "zh_tw": "愛我像沒有明天的演唱者是誰",
+      "no": "som synger elsker deg som om det ikke er noen i morgen",
+      "da": "hvem synger love you like there's no tomorrow",
+      "th": "ใครร้องเพลงรักคุณเหมือนไม่มีวันพรุ่งนี้",
+      "sv": "vem sjunger love you like there's no tomorrow",
+      "es": "quién canta love you like there's no tomorrow",
+      "ar": "من الذي يغني أحبك مثل لا يوجد غدا",
+      "en": "who sings love you like there's no tomorrow",
+      "ko": "누가 love you like there's no tomorrow"
+    },
+    "example_id": -4766029169354683727
+  }
+]

@@ -1,0 +1,24 @@
+\section{Related Work}
+\label{sec:related}
+
+Our work sits at the intersection of two active research areas: sycophancy in LLMs and multilingual alignment failures. We review each in turn and identify the gap our study addresses.
+
+\subsection{Sycophancy in LLMs}
+
+\citet{sharma2023towards} provide the foundational empirical study of sycophancy, identifying four distinct types: feedback sycophancy (tailoring positivity to user preferences), ``are you sure?'' sycophancy (capitulating on correct answers when challenged), answer sycophancy (shifting responses to match stated user beliefs), and mimicry sycophancy (repeating user errors). They find that Claude~1.3 wrongly admits mistakes 98\% of the time when challenged, and that weakly stated incorrect user beliefs reduce accuracy by up to 27\% on LLaMA-2. Critically, they show that the preference model used in RLHF prefers sycophantic responses 95\% of the time, implicating the training pipeline as a root cause.
+
+\citet{malmqvist2024sycophancy} survey the causes and mitigations of sycophancy, categorizing causes as training data biases, RLHF reward hacking, lack of grounded knowledge, and difficulty defining alignment objectives. They review mitigation strategies including improved training data, Bradley-Terry adjustments to fine-tuning, activation steering approaches such as KL-then-steer, and decoding-time interventions like Leading Query Contrastive Decoding. \citet{cheng2025elephant} introduce ``social sycophancy''---excessive face-preserving behavior---and find that LLMs preserve user face 45 percentage points more than humans, with sycophantic responses rewarded in preference datasets. \citet{liang2025machine} propose the Bullshit Index, framing sycophancy as a subtype of ``machine bullshit'' characterized by indifference to truth. They find that RLHF significantly exacerbates bullshit and that chain-of-thought prompting amplifies empty rhetoric by 21\%.
+
+A common thread across all sycophancy research is its exclusive focus on English. No prior work measures sycophancy in any other language, let alone across languages of varying resource levels. Our study fills this gap directly.
+
+\subsection{Multilingual Safety and Alignment Failures}
+
+A growing body of work demonstrates that alignment degrades for low-resource languages. \citet{shen2024language} identify two ``curses'': a \emph{harmfulness curse} (35\% harmful response rate for low-resource languages vs.\ 1\% for high-resource on GPT-4) and a \emph{relevance curse} (80\% instruction-following rate for low-resource vs.\ ${\sim}$100\% for high-resource). They find that RLHF reduces harmful responses by 45\% for high-resource languages but only 20\% for low-resource, with multilingual reward models achieving only ${\sim}$50\% accuracy on low-resource inputs.
+
+\citet{yong2023low} show that simply translating harmful prompts into low-resource languages bypasses GPT-4's safety mechanisms, achieving jailbreak rates of 79\% for low-resource languages compared to 11\% for high-resource. Individual low-resource languages like Zulu reach 53\% bypass rates. \citet{deng2023multilingual} corroborate these findings, reporting ${\sim}$3$\times$ higher harmful content generation rates for low-resource languages and proposing a Self-Defense mitigation framework. \citet{song2024multilingual} demonstrate that mixing languages within prompts can bypass safety mechanisms entirely. \citet{yong2025survey} provide a comprehensive survey noting that most safety training data remains English- and Chinese-centric, leaving the majority of languages systematically under-protected.
+
+\citet{li2024language} offer a mechanistic perspective, showing that low-resource language embeddings collapse into narrow, nearly one-dimensional clusters in activation space, with performance declining up to 24.3\%. This embedding collapse provides a plausible mechanism for our hypothesis: if factual representations in low-resource languages are geometrically compressed, they may offer less resistance when a sycophancy direction in activation space pushes toward agreement.
+
+\subsection{Positioning Our Work}
+
+While the multilingual safety literature documents that alignment fails for low-resource languages in terms of harmful content generation and jailbreak vulnerability, \emph{no prior work has extended this analysis to sycophancy}. Sycophancy is a subtler failure mode than generating harmful content---it degrades trust and reliability rather than producing overtly dangerous outputs---but it affects a far broader range of everyday interactions. Our work bridges these two literatures by applying the resource-level analysis from multilingual safety research to the sycophancy measurement framework established by \citet{sharma2023towards} and others.
